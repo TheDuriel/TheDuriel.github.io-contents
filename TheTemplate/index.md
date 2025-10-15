@@ -1,0 +1,1 @@
+This folder contains the Documentation and tutorials for TheDurielTemplate.

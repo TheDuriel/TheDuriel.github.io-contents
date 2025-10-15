@@ -1,0 +1,1 @@
+This folder contains all my public Godot tricks and tips.

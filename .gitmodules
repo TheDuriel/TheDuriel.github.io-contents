@@ -1,0 +1,3 @@
+[submodule "StarsWithoutNumber"]
+	path = StarsWithoutNumber
+	url = git@github.com:TheDuriel/TheDuriel.github.io-contents-swn.git

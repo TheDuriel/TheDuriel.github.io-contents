@@ -43,6 +43,4 @@ Hello world! This the personal blog of Manuel 'TheDuriel' Fischer.
 * https://github.com/TheDuriel/TheDuriel.github.io
 	* Edited and authored using Obsidian.md
 	* All contents on my pages are MIT, please credit me if used verbatim.
-* https://github.com/DefenderOfBasic/obsidian-quartz-template
-	* Quartz Template for Obsidian
-	* Created by DefenderOfBasic
+* https://quartz.jzhao.xyz/

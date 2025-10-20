@@ -3,10 +3,10 @@
 * MyAwesomeClass
 	* Standard Named Class
 	* Filename: MyAwesomeClass.gd
-* aMyAbstractClass
+* aMyAbstractClass - Godot 4.5+
 	* Abstract Class
 	* Filename does not inherit the prefix.
-* iMySceneClass - Godot 4.5+
+* iMySceneClass
 	* Scene Class
 	* Also implements a Factory function, .instantiate()
 	* Filename does not inherit the prefix

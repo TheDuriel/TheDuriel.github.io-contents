@@ -17,7 +17,7 @@ The biggest risk here is the "pointer problem". What if you have an Object A, wh
 
 Identifiers come to the rescue here.
 
-```GDScript
+```gdscript
 class_name Cable
 # Imagine a cable connecting an Outlet to a Machine
 # The player can edit place Cables in the world, and define these connections.
@@ -48,7 +48,7 @@ The principal idea at play is that we want to create a dictionary/struct of all 
 
 To this end, we begin by implementing a get_save_data() function on any object with saveable data. This function collects the required data from the object members, and packages it to be returned to the primary save system.
 
-```GDScript
+```gdscript
 class_name House
 
 var id: String = "house_a"
@@ -71,7 +71,7 @@ func get_save_data() -> Dictionary:
 
 Note how we generate an array of save data for the furniture of this house. This will allow us to instantiate the furniture later. It also means that the save file takes on a tree-like structure.
 
-```
+```gdscript
 Save Dictionary {
 	World.get_save_data()
 		House.get_save_data()
@@ -88,7 +88,7 @@ But if we are using ID's. Then shouldn't it be possible to simplify saving, and 
 
 If we assume that a top level object like World, already stores a list of all Objects within the world with all their IDs. Then **most of the time**, the hierarchy will look like this instead:
 
-```
+```gdscript
 Save Dictionary {
 	World.get_save_data()
 		[house_a, house_b, ...]
@@ -100,7 +100,7 @@ Save Dictionary {
 And instead of storing the data of their children, an  object only needs to store the ID.
 
 Meaning that our house example would look like this:
-```GDScript
+```gdscript
 class_name House
 
 var id: String = "house_a"
@@ -120,7 +120,7 @@ There are several things to consider when storing save data. Like, where to stor
 
 Personally I prefer the following approach:
 
-```GDScript
+```gdscript
 class_name SaveFile
 
 func save_game_to_disk(file_path: String)
@@ -153,7 +153,7 @@ My advice would be to use Folders to differentiate user profiles and playthrough
 
 ### But I want to use JSON!!!
 Using JSON is very simple if you modify your code as such:
-```GDScript
+```gdscript
 class_name SaveFile
 
 func save_game_to_disk(file_path: String)
@@ -183,7 +183,7 @@ But consider that:
 # 3. Retrieving the Data
 This is by far the easiest step.
 
-```GDScript
+```gdscript
 func load_save_data(file_path: String) -> void:
 	var f: FileAccess = FileAccess.open(file_path, FileAccess.READ)
 	var metadata: Dictionary = f.get_var()
@@ -211,7 +211,7 @@ In other cases, simply deleting the object and creating a new instance of it, wi
 ### 2. Apply the save data.
 Now that the game state is cleared, we apply the stored save data. Lets use our World and House object from earlier as an example.
 
-```GDScript
+```gdscript
 class_name World
 
 func apply_save_data(d: Dictionary) -> void:
@@ -222,7 +222,7 @@ func apply_save_data(d: Dictionary) -> void:
 		add_object(wo)
 ```
 
-```GDScript
+```gdscript
 class_name House
 
 var id: String = "house_a"

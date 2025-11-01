@@ -19,7 +19,7 @@ Creating a new setting in detail however is done as follows:
 5. Implement defaults as indicated
 
 ### Example Setting
-```GDScript
+```gdscript
 class_name AppSettingBlood
 extends AppSetting
 ## Blood Setting

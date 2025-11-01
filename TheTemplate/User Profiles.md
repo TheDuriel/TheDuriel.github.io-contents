@@ -31,7 +31,7 @@ UserProfiles.save_all_user_data() will save all user data for all existing profi
 
 This is an example of how to save and read a tutorials_enabled flag:
 
-```GDScript
+```gdscript
 # Sets the tutorial_enabled flag to false.
 App.profiles.current.user_data.stage_bool("tutorial_enabled", false)
 

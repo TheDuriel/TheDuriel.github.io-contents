@@ -30,14 +30,14 @@ All uses of groups can be replaced with a manual re-implementation of the same t
 
 ## Consider the following boilerplate alternative:
 
-```GDScript
+```gdscript
 class Entity
 
 func _init() -> void:
 	Entities.add_entity(self)
 ```
 
-```GDScript
+```gdscript
 # An autoload, or member of an Autoload
 # Provides functions for interacting with entities
 # This is the S in ECS ;P

@@ -2,7 +2,7 @@ While Timer can be a useful node at times. Often it is nicer to type one out you
 
 You get control and clarity, don't need an additional node, and can keep your code self contained.
 
-```GDScript
+```gdscript
 const WAIT_TIME: float = 1.0
 var _t: float = 0.0
 
@@ -45,7 +45,7 @@ Instead of running "during the 6ths tick" your timer "misses", and runs a whole 
 **How do we fix this?**
 By pretending that, each tick is actually the time of the next frame, and simulating additional sub-ticks.
 
-```GDScript
+```gdscript
 const MAX_TICKS: int = 300 # Process Ticks
 const WAIT_TIME: float = 0.100 # In seconds
 var tick: int = 0 # Elapsed Process Ticks

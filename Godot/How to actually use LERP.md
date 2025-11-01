@@ -6,7 +6,7 @@ Also note that, when you want to lerp over X time, or at Y units per frame. You 
 
 Other uses for lerp are to easily calculate percentages. Want the middle between A and B? a.lerp(b, 0.5). Want 50 beyond A to B? Make it 1.5.
 
-```GDScript
+```gdscript
 var _start: Vector2 = Vector.ZERO
 var _end: Vector2 = Vector.ZERO
 var _speed_scale: float = 1.0

@@ -17,7 +17,7 @@ These are some important functions for managing save games. Importantly the resp
 `App.save.gather_data_to_save()` is a helper function for gathering data to stage. Specifically, this function will query every Autoload in your project for a `get_save_data()` function, which must return a dictionary.
 
 Example:
-```GDScript
+```gdscript
 # We are about to make a quicksave.
 # 1. Collect the game state
 App.save.gather_data_to_save()
@@ -26,7 +26,7 @@ App.save.save_to_quicksave()
 ```
 
 Example of an Inventory Autoload which can be saved using this method. Note how it calls into its children objects to gather their save data in a recursive fashion.
-```GDScript
+```gdscript
 class_name Inventory
 
 func get_save_data() -> Dictionary:
@@ -43,7 +43,7 @@ func get_save_data() -> Dictionary:
 `App.save.apply_sava_data()` is a similar helper function, which will call the `apply_save_data()` function on all Autoloads that possess it.
 
 Example:
-```GDScript
+```gdscript
 # We are about to loada quicksave.
 # 1. Get the list of quicksaves.
 var quicksaves: Array[SaveFile] = App.profiles.current.get_quick_saves()
@@ -56,7 +56,7 @@ App.save.apply_save_data()
 ```
 
 Example of the same inventory class.
-```GDScript
+```gdscript
 class_name Inventory
 
 func apply_save_data(data: Dictionary) -> void:
@@ -73,7 +73,7 @@ func apply_save_data(data: Dictionary) -> void:
 
 If instead of using the gather and apply functions you prefer to put and fetch data yourself. You can instead use the `stage_<type>()` and `get_<type>()` functions in `App.save` implemented in AppSaveData.gd.
 
-```GDScript
+```gdscript
 # Sets the tutorial_completed flag to true.
 App.save.stage_bool("tutorial_completed", true)
 

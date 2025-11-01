@@ -44,7 +44,7 @@ Instead of one global location holding dozens of individual signals. You may hav
 
 Consider this example:
 
-```SWIFT
+```gdscript
 class MessageServer
 
 signal message_sent(message: Message)

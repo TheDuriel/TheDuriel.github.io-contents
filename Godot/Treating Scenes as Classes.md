@@ -4,7 +4,7 @@ I use the lower case i to indicate a Class which can be instanced. This applies 
 
 Consider the following example of a standard class:
 
-```GDScript
+```gdscript
 class_name MyNode
 extends Node
 
@@ -14,7 +14,7 @@ func _init() -> void:
 
 This class is instantiated using new()
 
-```GDScript
+```gdscript
 var instance: MyNode = MyNode.new()
 ```
 
@@ -22,7 +22,7 @@ However, what if this class was actually representing a Scene? Imagine you were 
 
 For this, we use the i prefix, and ideally, a factory pattern. Consider:
 
-```
+```gdscript
 class_name iMyScene
 extends Node
 

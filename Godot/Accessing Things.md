@@ -7,7 +7,7 @@ So you want to access the properties or functions of another Node?
 ### In the same Scene
 If you can see the node in the same scene as the one from which you are trying to access it. Use @export
 
-```GDScript
+```gdscript
 class_name House
 
 @export var door: Door
@@ -23,7 +23,7 @@ If both scenes are siblings within the same parent scene. Say, there is a LightS
 
 If the target is not available in the same scene. But is hidden within a subscene, you may be able to use the parent scene as the communication relay.
 
-```GDScript
+```gdscript
 class_name World
 
 @export var house: House
@@ -33,13 +33,13 @@ func _ready() -> void:
 	switch.target = house.light
 ```
 
-```GDScript
+```gdscript
 class_name House
 
 @export var light: Light
 ```
 
-```GDScript
+```gdscript
 class_name Switch
 
 var target: Switchable
@@ -51,7 +51,7 @@ func _on_switch_toggled(enabled: bool) -> void:
 ### Somewhere else entirely
 If there is no scene hierarchy through which the objects can easily access each other. Consider using an Autoload as the relay. I prefer ID based structures for situations in which there are **many of the same kind of thing.** In other scenarios, simply having a property in an autoload you assign to, can work fine. (Like keeping a Global.player reference to the player object. Or the Interface.)
 
-```GDScript
+```gdscript
 class_name Interactibles
 
 var _interactibles: Dictionary[String, Interactible] = {} # ID : Object
@@ -63,7 +63,7 @@ func get_interactible(id: String) -> Interactible:
 	# Returns the object if it exists.
 ```
 
-```GDScript
+```gdscript
 class_name Switch
 
 @export var target_id: String
@@ -77,7 +77,7 @@ func _on_switch_toggled(enabled: bool) -> void:
 ### Dynamically created
 When the object is dynamically created, then the easiest thing is to just keep the reference around instead of throwing it away.
 
-```GDScript
+```gdscript
 class_name House
 
 var front_door: Door
@@ -99,7 +99,7 @@ Loading a resource will return an instance of it. No matter how many times you l
 
 `load("PlayerConfig.tres")` will always return the same resource.
 
-```GDScript
+```gdscript
 class_name House
 
 var house_config: HouseConfig = load("HouseConfig.tres")
@@ -111,7 +111,7 @@ var house_config: HouseConfig = load("HouseConfig.tres")
 When using @export to apply a Resource to a Class. You can use the "local to scene" toggle in the Resource itself. To automatically run the following code snipped, and thus get each house a Unique copy.
 
 **This is what the 'local to scene' setting actually does.**
-```
+```gdscript
 func _init() -> void:
 	if house_config.local_to_scene:
 		house_config = house_config.duplicate()
@@ -120,7 +120,7 @@ func _init() -> void:
 ### From a Node
 Access the Resource as a member property.
 
-```GDScript
+```gdscript
 class_name ResourceManipulator
 
 @export var node_with_resource: Node
@@ -136,14 +136,14 @@ Not sure? Lets examine some options.
 ### Static Things
 To access `const` and `enum` properties of a Class Script. Give it a name.
 
-```GDScript
+```gdscript
 class_name CarConstants
 
 enum COLOR {BLUE, RED}
 const SPEED: int = 100
 ```
 
-```GDScript
+```gdscript
 class_name RaceCar
 
 @export var color: CarConstants.COLOR
@@ -153,7 +153,7 @@ class_name RaceCar
 ### Dynamic Things
 Make a new instance of the named class.
 
-```GDScript
+```gdscript
 class_name CarStats
 
 enum COLOR {RED, BLUE}
@@ -163,7 +163,7 @@ const SPEED: int = 100
 var speed: int = 100
 ```
 
-```GDScript
+```gdscript
 class_name RaceCar
 
 @export var speed_override: int = 500:

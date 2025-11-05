@@ -2,10 +2,11 @@ The Template overrides the default pausing behavior in the following ways:
 
 1. The Main Window (`SceneTree.root`) process mode is set to `Node.PROCESS_MODE_ALWAYS`
 	1. This means that, no nodes will ever pause when `SceneTree.set_pause()` is called.
-2. The Game.gd Autolaod process mode is set to `Node.PROCESS_MODE_PAUSABLE`
+2. The Game.gd Autoload process mode is set to `Node.PROCESS_MODE_PAUSABLE`
 	1. This means that, any child of Game will be paused when the SceneTree is paused.
-
-TLDR: Pausing is disabled on all nodes, that are not children of Game.gd
+3. The Interface.gd Autoload process mode is set to `Node.PROCESS_MODE_ALWAYS`
+	1. This means that Interface will never pause.
+	2. To allow pausing your own UI scenes, use `Node.PROCESS_MODE_PAUSABLE` in them.
 
 ### How to include Nodes in pausing?
 To include a scene that is not a child of the Game Autoload in the pause process, for example your gameplay HUD elements. Use `process_mode = Node.PROCESS_MODE_PAUSABLE` in their init or ready functions.

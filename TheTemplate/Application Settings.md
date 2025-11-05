@@ -1,8 +1,3 @@
-> [!todo]
-> App Settings are not currently making use of Abstract Classes. And implementing your own is needlessly complicated.
-> This will be changed.
-> Until then, please copy of the Example Setting instead of starting from scratch.
-
 The AppSettings system provides a means of defining global settings that are applied, regardless of the active user profile.
 
 These are mainly used for, window management, audio settings, and language or accessibility settings.
@@ -14,9 +9,7 @@ Creating a new setting in detail however is done as follows:
 
 1. Create a new script and save it in `res://Conent/AppSettings/`
 2. Extend AppSetting
-3. Copy the commented out code at the end of AppSetting
-4. Override the methods as indicated
-5. Implement defaults as indicated
+3. Implement the abstract functions as indicated
 
 ### Example Setting
 ```gdscript
@@ -29,25 +22,22 @@ extends AppSetting
 ## Default is no blood
 const DEFAULT: bool = false
 
-## Override from AppSetting to determine the setting type
+
+# These are the abstract functions defined in AppSetting
+# You must define each according to the comments provided in AppSetting
 func _init_value_type() -> int: return TYPE_BOOL
-## Override from AppSetting to determine the section in which to save the setting
 func get_cfg_section() -> String: return "parental"
-## Override from AppSetting to determine the name under which to save the setting
 func get_cfg_key() -> String: return "blood"
-## Override from AppSetting with the correct type
 func get_default() -> Variant: return DEFAULT
-## Override from AppSetting with the correct type
+
+# These four are provided as type safe alternatives for their unsafe counterpart in AppSetting
+# They are optional, but recommended, note that you need to adjust the typing accodingly
 func set_current(value: bool) -> void: _current = value
-## Override from AppSetting with the correct type
 func get_current() -> bool: return _current
-## Override from AppSetting with the correct type
 func set_staged(value: bool) -> void: _staged = value
-## Override from AppSetting with the correct type
 func get_staged() -> bool: return _staged
 
-
-## Override from AppSetting, applies the setting
+# Also abstract.
 func apply_setting() -> void:
 
 	# This is an example of how to skip applying a setting

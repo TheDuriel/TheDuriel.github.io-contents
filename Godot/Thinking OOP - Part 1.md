@@ -1,6 +1,3 @@
----
-draft: true
----
 > [!info] Heads Up!
 > This article is part of a longer series on Object Oriented, and Component Driven, systems architecture in Godot.
 > Part 1 starts with an example on how to get more out of Classes in the context of an Inventory and Item system.

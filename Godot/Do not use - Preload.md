@@ -1,8 +1,13 @@
-**Preloading is done when the scene is instanced.**
+> [!info] Heads Up!
+> A banned pattern is a programming or design pattern, or engine feature, which I have banned from use in all my own projects. Usually this is first and foremost, because I wasn't using them to begin with.
+> Despite the name, you should feel free to still use these features for: Leaning, prototyping, gamejams, and maybe even smaller games and vertical slices. Get the job done first. Just be aware that by using these things, you invite more work.
+## Assumptions
+
+1. **Preloading is done when the scene is instanced.**
 
 This is false.
 
-**Preloading is done when the Class (script file) is loaded.**
+2. **Preloading is done when the Class (script file) is loaded.**
 
 This is correct.
 
@@ -20,7 +25,7 @@ Third. We assume that preloading prevents hiccups from loading a large Resource 
 
 This is false. Preloading moves the cost of loading a Resource, to the time at which the Resource **containing** the preload statement is loaded. Instead of invoking a load for the first Resource, and then later for the second Resource. You have now added both of them together. Increasing the time it takes for the first Resource to load.
 
-### The actual problem: Startup time
+## The actual problem: Startup time
 
 1. preloads occur when the Class Script containing it is loaded.
 2. Class Scripts with a class_name are loaded when the game starts up.
@@ -57,7 +62,7 @@ What does this mean?
 5. **If 1. is true, you can also load() and it won't make a difference.**
 6. If the files are big, you've just caused a load stutter.
 
-### Solutions:
+## Solutions:
 
 Threaded loading.
 

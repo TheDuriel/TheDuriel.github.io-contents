@@ -1,7 +1,6 @@
-A banned pattern is a programming or design pattern, or engine feature, which I have banned from use in all my own projects. Usually this is first and foremost, because I wasn’t using them to begin with.
-
-Despite the name, you should feel free to still use these features for: Leaning, prototyping, gamejams, and maybe even smaller games and vertical slices. Get the job done first. Just be aware that by using these things, you invite more work.
-
+> [!info] Heads Up!
+> A banned pattern is a programming or design pattern, or engine feature, which I have banned from use in all my own projects. Usually this is first and foremost, because I wasn't using them to begin with.
+> Despite the name, you should feel free to still use these features for: Leaning, prototyping, gamejams, and maybe even smaller games and vertical slices. Get the job done first. Just be aware that by using these things, you invite more work.
 ## What is a Signal Hub?
 The Signal Hub is a popular pattern in Godot, proposed as a means of decoupling objects and allowing you to sidestep the scene hierarchy for node to node communication. Signals themselves are nothing but delegeate/events from C#, or similar anonymous function call subscription patterns.
 

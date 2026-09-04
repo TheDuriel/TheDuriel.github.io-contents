@@ -2,24 +2,39 @@
 title: TheDuriel's website thingy!
 ---
 
-Hello world! This the personal blog of Manuel 'TheDuriel' Fischer.
+Hello world! This the personal blog of Manuel 'TheDuriel' Fischer. Below you will find a collection of tools and projects I have made.
+
+In the sidebar you can find blog posts about Godot, game development, programming. And my TRPG campaign notes.
 
 ### Find Me
 
 * GitHub: https://github.com/TheDuriel
 * Twitter:  https://twitter.com/the_duriel
-* Bluesky: https://bsky.app/profile/theduriel.bsky.social
+* Bluesky: https://bsky.app/profile/theduriel.bsky.social <- I don't check this
 * Discord: "theduriel"
 * Email: "com dot gmail @ manueldurielfischer" <- Reverse it yourself.
 
 ### Tool Projects
 
-* DurielUtilities https://github.com/TheDuriel/DurielUtilities
-	* A utilities repo for Godot 
-* MagicMacros https://github.com/TheDuriel/MagicMacros
-	* A snipped engine for Godot 
-* Nylon https://theduriel.itch.io/nylon
-	* A commercial deep dialogue addon for Godot
+* DurielUtilities
+	* https://github.com/TheDuriel/DurielUtilities
+	* A utilities repo for Godot.
+* MagicMacros
+	* https://github.com/TheDuriel/MagicMacros
+	* A snipped engine for Godot.
+* Nylon
+	* https://theduriel.itch.io/nylon
+	* A commercial deep dialogue addon for Godot.
+* TinyAStar3D
+	* https://github.com/TheDuriel/TinyAStar3D
+	* Memory optimized Grid based AStar for 3D. Godot compatible.
+* Colorator
+	* https://github.com/TheDuriel/Colorator
+	* Photoshop style swatch management for Godot.
+* NodeTools
+	* https://github.com/TheDuriel/NodeTools
+	* Blender style toolbar for Godot's 2D and 3D editor.
+	* Preloaded with many 3D level building tools.
 
 ### Game Projects
 * NotUs https://store.steampowered.com/app/2234670/Not_Us/
@@ -28,15 +43,18 @@ Hello world! This the personal blog of Manuel 'TheDuriel' Fischer.
 * Nemeton
 	* Darkest Dungeon meets Sunless Sea.
 	* Position: Sole Developer
+* HEADSHOTTHEMOON
+	* ???
+	* Position: Sole Developer
 
 ### Experience
-* 15 Years Graphics Design
+* 15+ Years Graphics Design
 	* Interfaces, Editing, Design, specialty: Maps
 	* Photoshop, Affinity Designer & Publisher, Blender
-* 8 Years Programming
+* 8+ Years Programming
 	* Godot Engine, GDScript & C#
 	* General Purpose, C#
-* 10 Years Tabletop-TRPG Game Design
+* 10+ Years Tabletop-TRPG Game Design
 	* Rules Writing, Playtesting, Narrative Design, World Design, Character Design
 
 ### Credits & License

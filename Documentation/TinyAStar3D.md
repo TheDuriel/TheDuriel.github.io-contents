@@ -9,7 +9,9 @@ This page covers the usage documentation for TinyAStar3D a Godot 4 implementatio
 * Place in any folder of your choice within the project.
 * Make sure that your Godot Project already has a C# solution file created. You can do so by creating any C# script from within the editor one time, then deleting it again.
 * Press the build button in the editor, top right corner.
+
 ![[Pasted image 20260904224521.png]]
+
 ### Limitations / Use Case
 * TinyAStar3D only supports fixed size grids.
 * Cells are connected in cardinal directions only. (That's 6 directions, no diagonals.)
@@ -48,7 +50,9 @@ These classes are **internal**. You will never interact with them.
 ### Getting Started
 
 1. Add a TinyAStar3DNode instance to your scene.
+
 ![[Pasted image 20260904224302.png]]
+
 2. Set the world_size representing the playable area in global space.
 	* The world is assumed to originate from 0,0,0 and expand in the given direction.
 	* A world_size of 64,64,64 means the world is 128,128,128 units in size centered on 0,0,0.
@@ -57,7 +61,9 @@ These classes are **internal**. You will never interact with them.
 	* Values above 512 are **strongly discouraged.**
 	* Memory usage for a size of 448 is roughly 600mb.
 	* The minimum is 64.
+
 ![[Pasted image 20260904224326.png]]
+
 4. You can now generate paths via TinyAStar3D.get_astar_path(from, to).
 	* from and to must be global coordinates (within the world_size)
 	* This will return a path in global coordinates
